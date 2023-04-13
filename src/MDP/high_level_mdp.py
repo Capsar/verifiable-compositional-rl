@@ -41,7 +41,7 @@ class HLMDP(object):
         self.N_S = len(self.S) # Number of states in the high-level MDP
         self.N_A = len(self.A) # Number of actions in the high-level MDP
 
-        self.P = np.zeros((self.N_S, self.N_A, self.N_S), dtype=np.float)
+        self.P = np.zeros((self.N_S, self.N_A, self.N_S), dtype=np.float64)
         self._construct_transition_function()
 
         self.successor = {}
@@ -55,7 +55,7 @@ class HLMDP(object):
         Re-construct the transition function to reflect any changes in the empirical 
         measurements of how likely each controller is to succeed.
         """
-        self.P = np.zeros((self.N_S, self.N_A, self.N_S), dtype=np.float)
+        self.P = np.zeros((self.N_S, self.N_A, self.N_S), dtype=np.float64)
         self._construct_transition_function()
 
     def _construct_state_space(self):
@@ -151,6 +151,7 @@ class HLMDP(object):
 
         #initialize gurobi model
         linear_model = Model("abs_mdp_linear")
+        linear_model.setParam('OutputFlag', 0)
 
         #dictionary for state action occupancy
         state_act_vars=dict()
@@ -207,7 +208,7 @@ class HLMDP(object):
 
         if feasible_flag:
             # Construct the policy from the occupancy variables
-            policy = np.zeros((self.N_S, self.N_A), dtype=np.float)
+            policy = np.zeros((self.N_S, self.N_A), dtype=np.float64)
             for s in self.S:
                 if len(self.avail_actions[s]) == 0:
                     policy[s, :] = -1 # If no actions are available, return garbage value
@@ -222,7 +223,7 @@ class HLMDP(object):
                         for a in self.avail_actions[s]:
                             policy[s, a] = state_act_vars[s,a].x / occupancy_state
         else:
-            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float)
+            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float64)
 
         return policy, feasible_flag
 
@@ -244,6 +245,7 @@ class HLMDP(object):
 
         #initialize gurobi model
         linear_model = Model("abs_mdp_linear")
+        linear_model.setParam('OutputFlag', 0)
 
         #dictionary for state action occupancy
         state_act_vars=dict()
@@ -295,7 +297,7 @@ class HLMDP(object):
 
         if feasible_flag:
             # Construct the policy from the occupancy variables
-            policy = np.zeros((self.N_S, self.N_A), dtype=np.float)
+            policy = np.zeros((self.N_S, self.N_A), dtype=np.float64)
             for s in self.S:
                 if len(self.avail_actions[s]) == 0:
                     policy[s, :] = -1 # If no actions are available, return garbage value
@@ -310,7 +312,7 @@ class HLMDP(object):
                         for a in self.avail_actions[s]:
                             policy[s, a] = state_act_vars[s,a].x / occupancy_state
         else:
-            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float)
+            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float64)
 
         reach_prob = state_act_vars[self.s_g, 0].x
 
@@ -349,6 +351,7 @@ class HLMDP(object):
 
         # initialize gurobi model
         bilinear_model = Model("abs_mdp_bilinear")
+        bilinear_model.setParam('OutputFlag', 0)
 
         # activate gurobi nonconvex
         bilinear_model.params.NonConvex = 2
@@ -474,7 +477,7 @@ class HLMDP(object):
             reach_prob = state_act_vars[self.s_g, 0].x
 
             # Construct the policy from the occupancy variables
-            policy = np.zeros((self.N_S, self.N_A), dtype=np.float)
+            policy = np.zeros((self.N_S, self.N_A), dtype=np.float64)
             for s in self.S:
                 if len(self.avail_actions[s]) == 0:
                     policy[s, :] = -1  # If no actions are available, return garbage value
@@ -489,7 +492,7 @@ class HLMDP(object):
                         for a in self.avail_actions[s]:
                             policy[s, a] = state_act_vars[s, a].x / occupancy_state
         else:
-            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float)
+            policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float64)
             required_success_probs = [[-1 for a in self.avail_actions[s]] for s in self.S]
             reach_prob = -1
 
