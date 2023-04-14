@@ -12,7 +12,7 @@ from Controllers.meta_controller import MetaController
 import pickle
 import os, sys
 from datetime import datetime
-from MDP.high_level_mdp_scale import HLMDP
+from MDP.high_level_mdp import HLMDP
 from utils.results_saver import Results
 import torch
 import random
@@ -163,7 +163,7 @@ else:
 for controller_ind in range(len(controller_list)):
     controller = controller_list[controller_ind]
     # Evaluate initial performance of controllers (they haven't learned anything yet so they will likely have no chance of success.)
-    controller.eval_performance(n_episodes=num_rollouts, n_steps=n_steps_per_rollout)
+    controller.eval_performance(n_episodes=2, n_steps=n_steps_per_rollout)
     print('Controller {} achieved prob succes: {}'.format(controller_ind, controller.get_success_prob()))
 
     # Save learned controller
@@ -192,7 +192,6 @@ results.save(save_path)
 # %% Main loop of iterative compositional reinforcement learning
 
 total_timesteps = training_iters
-
 while reach_prob < prob_threshold:
 
     # Solve the HLM biliniear program to automatically optain sub-task specifications.
