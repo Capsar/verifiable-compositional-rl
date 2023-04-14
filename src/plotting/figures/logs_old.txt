@@ -1,0 +1,436 @@
+C:\Users\caspa\miniconda3\envs\ver-com-rl\python.exe C:\Users\caspa\Documents\01_SoftwareDevelopmentLocation\PyCharm\verifiable-compositional-rl\src\examples\run_minigrid_labyrinth.py 
+Random seed: 184016
+Controller 0 achieved prob succes: 0.0
+Controller 1 achieved prob succes: 0.0
+Controller 2 achieved prob succes: 0.0
+Controller 3 achieved prob succes: 0.0
+Controller 4 achieved prob succes: 0.0
+Controller 5 achieved prob succes: 0.0
+Controller 6 achieved prob succes: 0.0
+Controller 7 achieved prob succes: 0.0
+Controller 8 achieved prob succes: 0.0
+Controller 9 achieved prob succes: 0.0
+Controller 10 achieved prob succes: 0.0
+Controller 11 achieved prob succes: 0.0
+Restricted license - for non-production use only - expires 2024-10-28
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 178.57758
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.1
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 341.937756
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.2
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 448.966682
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.3
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 502.620996
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.4
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 556.011075
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.5
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 605.425038
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.6
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 660.708209
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.7
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 714.254427
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.8
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 767.906141
+opt
+Controller 0 achieved prob success: 0.0, required prob success: 0.9872585211560707  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 1.0000031247410201e-09  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 9.999992589963345e-10  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 9.999992589963343e-10  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.9872585721451852  The training step ratio: 0.9
+Controller 5 achieved prob success: 0.0, required prob success: 0.9872585711451968  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 9.999992589663411e-10  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 9.999992705904603e-10  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.9872585181592849  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 9.999992599710897e-10  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 9.999992589679552e-10  The training step ratio: 0.0
+Training controller 4
+Completed training controller 4
+Time running: 820.869893
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 1.004440933156869e-09  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 0.9897937379461016  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 1.0036018315863447e-09  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 0.9897938094242473  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 1.004440933156869e-09  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.0, required prob success: 0.9897938247476473  The training step ratio: 0.0
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 0.989793807413627  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 0.9897937329201234  The training step ratio: 0.0
+Training controller 8
+Completed training controller 8
+Time running: 874.037915
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 1.0044932664968508e-09  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 0.9897937328891334  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 1.0036439260102083e-09  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.0, required prob success: 0.9897938043740737  The training step ratio: 0.0
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 1.0044932664968508e-09  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9897938449625014  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 0.9897938023633321  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 0.9897937278628399  The training step ratio: 0.0
+Training controller 3
+Completed training controller 3
+Time running: 928.587733
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 1.0044932664875727e-09  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 0.9897937328891334  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 1.0036439260027446e-09  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.9897938043740737  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 1.0044932664875727e-09  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9897938449625014  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 0.9897938023633321  The training step ratio: 0.0
+Controller 11 achieved prob success: 0.0, required prob success: 0.9897937278628399  The training step ratio: 0.0
+Training controller 10
+Completed training controller 10
+Time running: 983.01352
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 1.0044932664837065e-09  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.0, required prob success: 0.9897937328891333  The training step ratio: 0.0
+Controller 2 achieved prob success: 0.0, required prob success: 1.0036439259996346e-09  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.9897938043740737  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 1.0044932664837065e-09  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9897938449625014  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.03333333333333333, required prob success: 0.9897938023633321  The training step ratio: 0.1
+Controller 11 achieved prob success: 0.0, required prob success: 0.9897937278628399  The training step ratio: 0.0
+Training controller 1
+Completed training controller 1
+Time running: 1032.662031
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 1.0044932663735351e-09  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9897937328891334  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 1.0036439259110103e-09  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.9897938043740737  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 1.0044932663735351e-09  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9897938449625013  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.03333333333333333, required prob success: 0.9897938023633323  The training step ratio: 0.1
+Controller 11 achieved prob success: 0.0, required prob success: 0.9897937278628399  The training step ratio: 0.0
+Training controller 11
+Completed training controller 11
+Time running: 1087.125914
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9871445216978028  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.988455221674955  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9867617592795253  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.03333333333333333, required prob success: 0.9866722172493338  The training step ratio: 0.1
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 10
+Completed training controller 10
+Time running: 1142.12596
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9871445216969872  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.9884552216757723  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9867617592803368  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.0, required prob success: 0.9866722172485239  The training step ratio: 0.2
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 10
+Completed training controller 10
+Time running: 1195.488511
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9871445217138514  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.08, required prob success: 0.9870523726474102  The training step ratio: 0.1
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.987084861389938  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.62, required prob success: 0.9877511326988574  The training step ratio: 0.3
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 3
+Completed training controller 3
+Time running: 1247.522827
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9871445217315347  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.73, required prob success: 0.9870523726223253  The training step ratio: 0.2
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9870848613711406  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.62, required prob success: 0.9877511327250087  The training step ratio: 0.3
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 10
+Completed training controller 10
+Time running: 1300.404093
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9871445217332135  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.73, required prob success: 0.9870523726200167  The training step ratio: 0.2
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9870848613693942  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.68, required prob success: 0.9877511327273805  The training step ratio: 0.4
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 10
+Completed training controller 10
+Time running: 1350.998011
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9872585483804451  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.73, required prob success: 0.9877856824411393  The training step ratio: 0.2
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9870239134239718  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.9833333333333333, required prob success: 0.9869650790745514  The training step ratio: 0.5
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 3
+Completed training controller 3
+Time running: 1397.200019
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9872585483806631  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.8933333333333333, required prob success: 0.9877856824421182  The training step ratio: 0.3
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9870239134198128  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.9833333333333333, required prob success: 0.9869650790775146  The training step ratio: 0.5
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 3
+Completed training controller 3
+Time running: 1442.517514
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.95, required prob success: 0.9874583686439266  The training step ratio: 0.1
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.9833333333333333, required prob success: 0.9879144572643671  The training step ratio: 0.4
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.9861793916373969  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.9833333333333333, required prob success: 0.9874811067888731  The training step ratio: 0.5
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 1
+Completed training controller 1
+Time running: 1489.263484
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.9966666666666667, required prob success: 0.9966666666666667  The training step ratio: 0.2
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.9833333333333333, required prob success: 0.9838450841452195  The training step ratio: 0.4
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.97, required prob success: 0.984247988142501  The training step ratio: 0.1
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.9833333333333333, required prob success: 0.9843319982408888  The training step ratio: 0.5
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 8
+Completed training controller 8
+Time running: 1534.559288
+opt
+Controller 4, max success prob: 0.0
+Controller 0 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 1 achieved prob success: 0.9966666666666667, required prob success: 0.9966666666666667  The training step ratio: 0.2
+Controller 2 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 3 achieved prob success: 0.9833333333333333, required prob success: 0.9844354512063352  The training step ratio: 0.4
+Controller 4 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 1.0
+Controller 5 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 6 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 7 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 8 achieved prob success: 0.9833333333333333, required prob success: 0.9837741595296581  The training step ratio: 0.2
+Controller 9 achieved prob success: 0.0, required prob success: 0.0  The training step ratio: 0.0
+Controller 10 achieved prob success: 0.9833333333333333, required prob success: 0.984215779361954  The training step ratio: 0.5
+Controller 11 achieved prob success: 1.0, required prob success: 1.0  The training step ratio: 0.1
+Training controller 3
+Completed training controller 3
+Time running: 1579.542825
+evaluating performance of meta controller
+Predicted success prob: 0.9540840833333333, empirically measured success prob: 0.9766666666666667
+total time running: 1583.678154
+total environment steps: 1250000.0
+
+Process finished with exit code 0

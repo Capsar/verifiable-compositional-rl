@@ -133,3 +133,4 @@ dmypy.json
 *.tex
 
 src/data/*
+.idea/

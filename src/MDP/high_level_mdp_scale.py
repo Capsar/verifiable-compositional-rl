@@ -1,6 +1,7 @@
 import numpy as np
 from gurobipy import *
 
+
 class HLMDP(object):
     """
     Class representing the MDP model of the high-level decision making process.
@@ -18,9 +19,9 @@ class HLMDP(object):
             List of MinigridController objects (the sub-systems being used as components 
             of the overall RL system).
         """
-        
+
         self.init_states = init_states
-        self.goal_states = goal_states        
+        self.goal_states = goal_states
         self.controller_list = controller_list
 
         self.state_list = []
@@ -37,9 +38,8 @@ class HLMDP(object):
 
         self._construct_avail_actions()
 
-
-        self.N_S = len(self.S) # Number of states in the high-level MDP
-        self.N_A = len(self.A) # Number of actions in the high-level MDP
+        self.N_S = len(self.S)  # Number of states in the high-level MDP
+        self.N_A = len(self.A)  # Number of actions in the high-level MDP
 
         self.P = np.zeros((self.N_S, self.N_A, self.N_S), dtype=np.float64)
         self._construct_transition_function()
@@ -68,9 +68,9 @@ class HLMDP(object):
             if controller_final_states not in self.state_list:
                 self.state_list.append(controller_final_states)
 
-        self.state_list.append(-1) # Append another state representing the absorbing "task failed" state
+        self.state_list.append(-1)  # Append another state representing the absorbing "task failed" state
         self.S = np.arange(len(self.state_list))
-        
+
         self.s_i = self.state_list.index(self.init_states)
         self.s_g = self.state_list.index(self.goal_states)
         self.s_fail = self.state_list.index(-1)
@@ -85,15 +85,14 @@ class HLMDP(object):
             init_s = self.state_list.index(controller_init_states)
             self.avail_actions[init_s].append(controller_ind)
 
-    #TODO make sure we don't have duplicate states in this list.
+    # TODO make sure we don't have duplicate states in this list.
     def _construct_avail_actions(self):
         for a in self.A:
-            self.avail_states[a]=[]
+            self.avail_states[a] = []
 
         for s in self.S:
             avail_actions = self.avail_actions[s]
             for action in avail_actions:
-
                 self.avail_states[action].append(s)
 
     def _construct_transition_function(self):
@@ -146,59 +145,60 @@ class HLMDP(object):
         """
         self.update_transition_function()
 
-        if prob_threshold>1 or prob_threshold<0:
+        if prob_threshold > 1 or prob_threshold < 0:
             raise RuntimeError("prob threshold is not a probability")
 
-        #initialize gurobi model
+        # initialize gurobi model
         linear_model = Model("abs_mdp_linear")
         linear_model.setParam('OutputFlag', 0)
 
-        #dictionary for state action occupancy
-        state_act_vars=dict()
+        # dictionary for state action occupancy
+        state_act_vars = dict()
 
         avail_actions = self.avail_actions.copy()
 
-        #dummy action for goal state
-        avail_actions[self.s_g]=[0]
+        # dummy action for goal state
+        avail_actions[self.s_g] = [0]
 
-        #create occupancy measures, probability variables and reward variables
+        # create occupancy measures, probability variables and reward variables
+        # constraint 3
         for s in self.S:
             for a in avail_actions[s]:
-                state_act_vars[s,a]=linear_model.addVar(lb=0, 
-                                        name="state_act_"+str(s)+"_"+str(a))
+                state_act_vars[s, a] = linear_model.addVar(lb=0,
+                                                           name="state_act_" + str(s) + "_" + str(a))
 
-        #gurobi updates model
+        # gurobi updates model
         linear_model.update()
 
-        #MDP bellman or occupancy constraints for each state
+        # MDP bellman or occupancy constraints for each state
         for s in self.S:
-            cons=0
-            #add outgoing occupancy for available actions
+            cons = 0
+            # add outgoing occupancy for available actions
             for a in avail_actions[s]:
-                cons+=state_act_vars[s,a]
+                cons += state_act_vars[s, a]
 
-            #add ingoing occupancy for predecessor state actions
+            # add ingoing occupancy for predecessor state actions
             for s_bar, a_bar in self.predecessors[s]:
-                #this if clause ensures that you dont double count reaching goal and failure
+                # this if clause ensures that you dont double count reaching goal and failure
                 if not s_bar == self.s_g and not s_bar == self.s_fail:
                     cons -= state_act_vars[s_bar, a_bar] * self.P[s_bar, a_bar, s]
-            #initial state occupancy
+            # initial state occupancy
             if s == self.s_i:
-                cons=cons-1
+                cons = cons - 1
 
-            #sets occupancy constraints
-            linear_model.addConstr(cons==0)
+            # sets occupancy constraints
+            linear_model.addConstr(cons == 0)
 
         # prob threshold constraint
         for s in self.S:
             if s == self.s_g:
-                linear_model.addConstr(state_act_vars[s,0] >= prob_threshold)
+                linear_model.addConstr(state_act_vars[s, 0] >= prob_threshold)
 
         # set up the objective
-        obj=0
+        obj = 0
 
-        #set the objective, solve the problem
-        linear_model.setObjective(obj,GRB.MINIMIZE)
+        # set the objective, solve the problem
+        linear_model.setObjective(obj, GRB.MINIMIZE)
         linear_model.optimize()
 
         if linear_model.SolCount == 0:
@@ -211,17 +211,17 @@ class HLMDP(object):
             policy = np.zeros((self.N_S, self.N_A), dtype=np.float64)
             for s in self.S:
                 if len(self.avail_actions[s]) == 0:
-                    policy[s, :] = -1 # If no actions are available, return garbage value
+                    policy[s, :] = -1  # If no actions are available, return garbage value
                 else:
-                    occupancy_state = np.sum([state_act_vars[s,a].x for a in self.avail_actions[s]])
+                    occupancy_state = np.sum([state_act_vars[s, a].x for a in self.avail_actions[s]])
                     # If the state has no occupancy measure under the solution, set the policy to 
                     # be uniform over available actions
                     if occupancy_state == 0.0:
                         for a in self.avail_actions[s]:
-                            policy[s,a] = 1 / len(self.avail_actions[s])
+                            policy[s, a] = 1 / len(self.avail_actions[s])
                     if occupancy_state > 0.0:
                         for a in self.avail_actions[s]:
-                            policy[s, a] = state_act_vars[s,a].x / occupancy_state
+                            policy[s, a] = state_act_vars[s, a].x / occupancy_state
         else:
             policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float64)
 
@@ -243,50 +243,50 @@ class HLMDP(object):
         """
         self.update_transition_function()
 
-        #initialize gurobi model
+        # initialize gurobi model
         linear_model = Model("abs_mdp_linear")
         linear_model.setParam('OutputFlag', 0)
 
-        #dictionary for state action occupancy
-        state_act_vars=dict()
+        # dictionary for state action occupancy
+        state_act_vars = dict()
 
         avail_actions = self.avail_actions.copy()
 
-        #dummy action for goal state
-        avail_actions[self.s_g]=[0]
+        # dummy action for goal state
+        avail_actions[self.s_g] = [0]
 
-        #create occupancy measures, probability variables and reward variables
+        # create occupancy measures, probability variables and reward variables
         for s in self.S:
             for a in avail_actions[s]:
-                state_act_vars[s,a]=linear_model.addVar(lb=0,name="state_act_"+str(s)+"_"+str(a))
+                state_act_vars[s, a] = linear_model.addVar(lb=0, name="state_act_" + str(s) + "_" + str(a))
 
-        #gurobi updates model
+        # gurobi updates model
         linear_model.update()
 
-        #MDP bellman or occupancy constraints for each state
+        # MDP bellman or occupancy constraints for each state
         for s in self.S:
-            cons=0
-            #add outgoing occupancy for available actions
+            cons = 0
+            # add outgoing occupancy for available actions
             for a in avail_actions[s]:
-                cons+=state_act_vars[s,a]
+                cons += state_act_vars[s, a]
 
-            #add ingoing occupancy for predecessor state actions
+            # add ingoing occupancy for predecessor state actions
             for s_bar, a_bar in self.predecessors[s]:
-                #this if clause ensures that you dont double count reaching goal and failure
+                # this if clause ensures that you dont double count reaching goal and failure
                 if not s_bar == self.s_g and not s_bar == self.s_fail:
                     cons -= state_act_vars[s_bar, a_bar] * self.P[s_bar, a_bar, s]
-            #initial state occupancy
+            # initial state occupancy
             if s == self.s_i:
-                cons=cons-1
+                cons = cons - 1
 
-            #sets occupancy constraints
-            linear_model.addConstr(cons==0)
+            # sets occupancy constraints
+            linear_model.addConstr(cons == 0)
 
         # set up the objective
         obj = 0
-        obj+= state_act_vars[self.s_g, 0] # Probability of reaching goal state
+        obj += state_act_vars[self.s_g, 0]  # Probability of reaching goal state
 
-        #set the objective, solve the problem
+        # set the objective, solve the problem
         linear_model.setObjective(obj, GRB.MAXIMIZE)
         linear_model.optimize()
 
@@ -300,17 +300,17 @@ class HLMDP(object):
             policy = np.zeros((self.N_S, self.N_A), dtype=np.float64)
             for s in self.S:
                 if len(self.avail_actions[s]) == 0:
-                    policy[s, :] = -1 # If no actions are available, return garbage value
+                    policy[s, :] = -1  # If no actions are available, return garbage value
                 else:
-                    occupancy_state = np.sum([state_act_vars[s,a].x for a in self.avail_actions[s]])
+                    occupancy_state = np.sum([state_act_vars[s, a].x for a in self.avail_actions[s]])
                     # If the state has no occupancy measure under the solution, set the policy to 
                     # be uniform over available actions
                     if occupancy_state == 0.0:
                         for a in self.avail_actions[s]:
-                            policy[s,a] = 1 / len(self.avail_actions[s])
+                            policy[s, a] = 1 / len(self.avail_actions[s])
                     if occupancy_state > 0.0:
                         for a in self.avail_actions[s]:
-                            policy[s, a] = state_act_vars[s,a].x / occupancy_state
+                            policy[s, a] = state_act_vars[s, a].x / occupancy_state
         else:
             policy = -1 * np.ones((self.N_S, self.N_A), dtype=np.float64)
 
@@ -368,20 +368,24 @@ class HLMDP(object):
         # dictionary for epigraph variables used to define objective
         MDP_prob_diff_maximizers = dict()
 
+        MDP_train_diff_maximizers = dict()
         # dummy action for goal state
         self.avail_actions[self.s_g] = [0]
 
         # create occupancy measures, probability variables and reward variables
-        #for s in self.S:
+        # x(s, c)
         for s in self.S:
             for a in self.avail_actions[s]:
-                state_act_vars[s,a] = bilinear_model.addVar(lb=0,name="state_act_"+str(s)+"_"+str(a))
+                state_act_vars[s, a] = bilinear_model.addVar(lb=0, name="state_act_" + str(s) + "_" + str(a))
 
         for a in self.A:
-            MDP_prob_vars[a] = bilinear_model.addVar(lb=0, ub=1, name="mdp_prob_"  + str(a))
-            slack_prob_vars[a] = bilinear_model.addVar(lb=0, ub=1, name="slack_" + str(a))
+            # p_c
+            MDP_prob_vars[a] = bilinear_model.addVar(lb=0, ub=1, name="mdp_prob_" + str(a))
 
-            MDP_prob_diff_maximizers[a] = bilinear_model.addVar(lb=0, name='mdp_prob_difference_maximizer_'  + str(a))
+            # Is not used / mentioned in the paper
+            # slack_prob_vars[a] = bilinear_model.addVar(lb=0, ub=1, name="slack_" + str(a))
+
+            MDP_prob_diff_maximizers[a] = bilinear_model.addVar(lb=0, name='mdp_prob_difference_maximizer_' + str(a))
 
         # #epigraph variable for max probability constraint
         # prob_maximizer = bilinear_model.addVar(lb=0, name="prob_maximizer")
@@ -393,7 +397,6 @@ class HLMDP(object):
         for s in self.S:
             cons = 0
             # add outgoing occupancy for available actions
-
             for a in self.avail_actions[s]:
                 cons += state_act_vars[s, a]
 
@@ -417,7 +420,7 @@ class HLMDP(object):
 
         # For each low-level component, add constraints corresponding to
         # the existing performance.
-        #for s in self.S:
+        # for s in self.S:
         for a in self.A:
             existing_success_prob = np.copy(self.controller_list[a].get_success_prob())
             assert (existing_success_prob >= 0 and existing_success_prob <= 1)
@@ -430,22 +433,36 @@ class HLMDP(object):
                     existing_success_prob = np.copy(self.controller_list[a].get_success_prob())
                     assert (existing_success_prob >= 0 and existing_success_prob <= 1)
                     print('Controller {}, max success prob: {}'.format(a, existing_success_prob))
-                    bilinear_model.addConstr(MDP_prob_vars[a] <= existing_success_prob + slack_prob_vars[a])
+                    bilinear_model.addConstr(MDP_prob_vars[a] <= existing_success_prob)
 
         # set up the objective
         obj = 0
 
-        slack_cons = 1e3
+        # slack_cons = 1e3
         # # Minimize the sum of success probability lower bounds
+        resource_ratios = [self.controller_list[a].data['total_training_steps'] / max_timesteps_per_component for a in self.A]
+        for success_prob_weight in np.linspace(0, 1, 10):
+            next_success_prob_weight = 0
+            for idx, a in enumerate(self.A):
+                f_x = (1 + success_prob_weight) * resource_ratios[idx] - success_prob_weight
+                if self.controller_list[a].get_success_prob() > f_x:
+                    next_success_prob_weight += 1
+            if next_success_prob_weight == len(self.A):
+                continue
 
-        for a in self.A:
-            obj += MDP_prob_diff_maximizers[ a]
-            obj += slack_cons * slack_prob_vars[a]
+            for idx, a in enumerate(self.A):
+                f_x = (1+success_prob_weight)*resource_ratios[idx] - success_prob_weight
+                if self.controller_list[a].get_success_prob() < f_x:
+                    bilinear_model.addConstr(MDP_prob_vars[a] <= f_x)
+
+        # Minimize the sum of success probability lower bounds
+        for idx, a in enumerate(self.A):
+            obj += MDP_prob_diff_maximizers[a]
+            # obj -= success_prob_weight * MDP_prob_vars[a] * (1 - resource_ratios[idx]) * (1- self.controller_list[a].get_success_prob())
 
         # Minimize the sum of differences between probability objective and empirical achieved probabilities
         for a in self.A:
-            bilinear_model.addConstr(
-                MDP_prob_diff_maximizers[a] >= MDP_prob_vars[a] - self.controller_list[a].get_success_prob())
+            bilinear_model.addConstr(MDP_prob_diff_maximizers[a] >= MDP_prob_vars[a] - self.controller_list[a].get_success_prob())
 
         # set the objective, solve the problem
         bilinear_model.setObjective(obj, GRB.MINIMIZE)
@@ -456,9 +473,9 @@ class HLMDP(object):
         else:
             feasible_flag = True
 
-        for a in self.A:
-            if slack_prob_vars[ a].x > 1e-6:
-                print("required slack value {} at action: {} ".format(slack_prob_vars[a].x, a))
+        # for a in self.A:
+        #     if slack_prob_vars[a].x > 1e-6:
+        #         print("required slack value {} at action: {} ".format(slack_prob_vars[a].x, a))
 
         if feasible_flag:
             # Update the requirements for the individual components

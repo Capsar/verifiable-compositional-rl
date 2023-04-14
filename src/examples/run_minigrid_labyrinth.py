@@ -14,6 +14,10 @@ import os, sys
 from datetime import datetime
 from MDP.high_level_mdp import HLMDP
 from utils.results_saver import Results
+import torch
+import random
+
+start_time = datetime.now()
 
 # %% Setup and create the environment
 env_settings = {
@@ -31,6 +35,13 @@ max_timesteps_per_component = 5e5
 n_steps_per_rollout = 100
 meta_controller_n_steps_per_rollout = 200
 
+rseed = 184016
+torch.manual_seed(rseed)
+random.seed(rseed)
+np.random.seed(rseed)
+print('Random seed: {}'.format(rseed))
+
+
 # %% Set the load directory (if loading pre-trained sub-systems) or create a new directory in which to save results
 
 load_folder_name = ''
@@ -46,16 +57,19 @@ base_path = os.path.join(base_path, 'data', 'saved_controllers')
 
 load_dir = os.path.join(base_path, load_folder_name)
 
+
 if load_folder_name == '':
     now = datetime.now()
     dt_string = now.strftime("%Y-%m-%d_%H-%M-%S")
-    rseed = int(now.time().strftime('%H%M%S'))
+    # rseed = int(now.time().strftime('%H%M%S'))
     save_path = os.path.join(base_path, dt_string + '_' + experiment_name)
 else:
     save_path = os.path.join(base_path, load_folder_name)
 
 if save_learned_controllers and not os.path.isdir(save_path):
     os.mkdir(save_path)
+
+
 
 # %% Create the list of partially instantiated sub-systems
 controller_list = []
@@ -145,18 +159,11 @@ else:
 
 # %%
 
-import torch
-import random
-torch.manual_seed(rseed)
-random.seed(rseed)
-np.random.seed(rseed)
-
-print('Random seed: {}'.format(results.data['random_seed']))
 
 for controller_ind in range(len(controller_list)):
     controller = controller_list[controller_ind]
     # Evaluate initial performance of controllers (they haven't learned anything yet so they will likely have no chance of success.)
-    controller.eval_performance(n_episodes=num_rollouts, n_steps=n_steps_per_rollout)
+    controller.eval_performance(n_episodes=2, n_steps=n_steps_per_rollout)
     print('Controller {} achieved prob succes: {}'.format(controller_ind, controller.get_success_prob()))
 
     # Save learned controller
@@ -185,7 +192,6 @@ results.save(save_path)
 # %% Main loop of iterative compositional reinforcement learning
 
 total_timesteps = training_iters
-
 while reach_prob < prob_threshold:
 
     # Solve the HLM biliniear program to automatically optain sub-task specifications.
@@ -197,7 +203,10 @@ while reach_prob < prob_threshold:
     # Print the empirical sub-system estimates and the sub-system specifications to terminal
     for controller_ind in range(len(hlmdp.controller_list)):
         controller = hlmdp.controller_list[controller_ind]
-        print('Init state: {}, Action: {}, End state: {}, Achieved success prob: {}, Required success prob: {}'.format(controller.get_init_states(), controller_ind, controller.get_final_states(), controller.get_success_prob(), controller.data['required_success_prob']))
+        # print('Init state: {}, Action: {}, End state: {}, Achieved success prob: {}, Required success prob: {}'.format(controller.get_init_states(), controller_ind, controller.get_final_states(), controller.get_success_prob(), controller.data['required_success_prob']))
+        print(f'Controller {controller_ind} achieved prob success: {controller.get_success_prob()}, '
+              f'required prob success: {controller.data["required_success_prob"]} '
+              f' The training step ratio: {controller.data["total_training_steps"] / max_timesteps_per_component}')
 
     # Decide which sub-system to train next.
     performance_gaps = []
@@ -233,6 +242,7 @@ while reach_prob < prob_threshold:
     results.update_controllers(hlmdp.controller_list)
     results.update_composition_data(meta_success_rate, num_rollouts, policy, reach_prob)
     results.save(save_path)
+    print(f'Time running: {(datetime.now() - start_time).total_seconds()}')
 
 # %% Once the loop has been completed, construct a meta-controller and visualize its performance
 
@@ -240,6 +250,9 @@ meta_controller = MetaController(policy, hlmdp.controller_list, hlmdp.state_list
 print('evaluating performance of meta controller')
 meta_success_rate = meta_controller.eval_performance(env, n_episodes=num_rollouts, n_steps=meta_controller_n_steps_per_rollout)
 print('Predicted success prob: {}, empirically measured success prob: {}'.format(reach_prob, meta_success_rate))
+print(f'total time running: {(datetime.now() - start_time).total_seconds()}')
+total_environment_steps = sum([controller.data['total_training_steps'] for controller in hlmdp.controller_list])
+print(f'total environment steps: {total_environment_steps}')
 
 n_episodes = 5
 n_steps = 200

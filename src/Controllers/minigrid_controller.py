@@ -183,6 +183,11 @@ class MiniGridController(object):
     def get_final_states(self):
         return self.final_states
 
+    def get_training_step_ratio(self):
+        max_total_training_steps = np.max(list(self.data['performance_estimates'].keys()))
+        training_ratio = max_total_training_steps / self.max_training_steps
+        return training_ratio
+
     def get_success_prob(self):
         # Return the most recently estimated probability of success
         max_total_training_steps = np.max(list(self.data['performance_estimates'].keys()))
